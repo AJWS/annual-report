@@ -1,0 +1,90 @@
+<div id='legend' style='display:none;'>
+  <nav class='legend clearfix'>
+  	<h2 style="font-size:18px; color:#0f5b65; margin-bottom:6px;">Map Key</h2>
+	<label class="map-key-label"><span class="map-key-img"><i class="fa fa-map-marker" style="color:#ad005f; font-size:1.4rem;"></i></span>U.S. Offices</label>
+	<label class="map-key-label"><span class="map-key-img"><img src="http://nbcom01/annual-report/img/marker_country.png"/></span>AJWS's Work in 19 priority countries and the Phillipines</label>
+</div>
+<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
+<style>#map { width:100%; height:500px; position: relative; }</style>
+<div id='map' class='dark'></div>
+<script>
+	var map = L.mapbox.map('map', 'ajws.ilh8k62p', {
+			attributionControl: false,
+			infoControl:true,
+			minZoom: 2,
+			maxZoom: 2,
+			zoomControl: false
+		});
+	map.setView([19.311, 6.855], 2);
+	map.gridControl.options.follow = true;          
+	map.touchZoom.disable();
+	map.doubleClickZoom.disable();
+	map.scrollWheelZoom.disable(); 
+	map.legendControl.addLegend(document.getElementById('legend').innerHTML);
+  
+	L.mapbox.featureLayer({
+		type: 'Feature',
+		geometry: {
+			type: 'Point', coordinates: [-119.35546875000001, 34.52466147177172]
+		},
+		properties: {
+			title: 'Los Angeles, CA',
+			description: '',				
+			'marker-size': 'small',
+			'marker-color': '#ad005f'
+		}
+	}).addTo(map);
+	
+	L.mapbox.featureLayer({
+		type: 'Feature',
+		geometry: {
+			type: 'Point', coordinates: [-122.607421875, 37.996162679728116]
+		},
+		properties: {
+			title: 'San Francisco, CA',
+			description: '',				
+			'marker-size': 'small',
+			'marker-color': '#ad005f'
+		}
+	}).addTo(map);
+	
+	L.mapbox.featureLayer({
+		type: 'Feature',
+		geometry: {
+			type: 'Point', coordinates: [-83.408203125, 42.09822241118974]
+		},
+		properties: {
+			title: 'Chicago, IL',
+			description: '',				
+			'marker-size': 'small',
+			'marker-color': '#ad005f'
+		}
+	}).addTo(map);
+	
+	L.mapbox.featureLayer({
+		type: 'Feature',
+		geometry: {
+			type: 'Point', coordinates: [-74.267578125, 40.78054143186031]
+		},
+		properties: {
+			title: 'New York, NY',
+			description: '',				
+			'marker-size': 'small',
+			'marker-color': '#ad005f'
+		}
+	}).addTo(map);
+	
+	L.mapbox.featureLayer({
+		type: 'Feature',
+		geometry: {
+			type: 'Point', coordinates: [-77.031342, 38.901314]
+		},
+		properties: {
+			title: 'Washington, D.C.',
+			description: '',				
+			'marker-size': 'small',
+			'marker-color': '#ad005f'
+		}
+	}).addTo(map);
+</script>
